@@ -4,7 +4,7 @@
 
 void lowerc(char str[]);
 void removeSpaces(char *str);
-
+void swapcase(char str[]);
 int main() {
     char str[100];
     printf("Enter a string: ");
@@ -12,7 +12,7 @@ int main() {
     removeSpaces(str);
     printf("String without spaces: %s\n", str);
     lowerc(str);
-
+    swapcase(str);
     return 0;
 }
 
@@ -36,4 +36,16 @@ void removeSpaces(char *str){
     }
     str[j] = '\0'; // Null-terminate the modified string
 }
+void swapcase(char str[] ){
+    for(int i = 0; str[i] != '\0' ; i++){
+        if(strchr("abcdefghijklmnopqrstuvwxyz" , str[i])){
+            str[i] = toupper(str[i]);
+    }
+        else if(strchr("ABCDEFGHIJKLMNOPQRSTUVWXYZ" , str[i])){
+            str[i] = tolower(str[i]);
+        }
+    }
+    printf("%s" , str);
+}
+
 
